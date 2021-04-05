@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Document</title>
+	{% load static %}
+	<link rel="stylesheet"  href="{% static 'estilos.css' %}">
+</head>
+<body>
+	 <!-- Navbar -->
+    <header class="container main-header">
+      <nav class="container__row main-menu">
+          <p class="nom">
+          	AMAZON
+          </p>
+        <!-- Search tag -->
+        <form action="#" class="search-tag">
+          <input
+            type="text"
+            class="search-tag__input"
+            id="search-tag__input"
+            placeholder="Buscar productos, marcas y más..."
+          />
+          <label for="search-tag__input" class="search-tag__btn">
+            <i class="fas fa-search"></i>
+          </label>
+        </form>
+        <!-- Navbar -->
+        <div class="main-navbar position-relative">
+          <div class="main-navbar-links">
+            <a href="./store.html" class="main-navbar__link">Inicio</a>
+            <a href="./categorias.html" class="main-navbar__link">Categorías</a>
+            <a href="./ofertas.html" class="main-navbar__link">Ofertas</a>
+            <a href="./ayuda.html" class="main-navbar__link">Ayuda</a>
+          </div>
+	</header>         
+	<h1 id="q" class="title">Bienvenidos, Jose Manuel Rodriguez Crisantos </h1>
+	<section id="p">
+		{% for artic in arti%}
+			<article>
+				<h3>{{artic.producto}}</h3>
+				<p>
+					{{artic.descripcion}}<br>
+					<p>$ {{artic.precios}}</p>
+				</p>
+			</article>
+		{% endfor %}
+	</section>
+	<footer class="footer">
+       <div class="social-networks">
+	        <h2 class="footer-title">CONTACTO</h2>
+
+	        <ul>
+	        	<li>
+	        		Autor: Jose Manuel Rodriguez Crisantos
+	        	</li>
+	        	<li>
+	        		Correo: jose_manuel_r.c@Outlook.com
+	        	</li>
+	        	<li>
+	        		Telefono: 7226443625
+	        	</li>
+	        	<li>
+	        		Ubicacion: Estado de Mexico, Toluca de Lerdo
+	        	</li>
+	        </ul>
+    	</div>
+    </footer>
+</body>
+</html>
